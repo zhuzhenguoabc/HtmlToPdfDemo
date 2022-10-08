@@ -86,7 +86,8 @@ public class MainActivity extends AppCompatActivity {
         });
 //        mWebView.getSettings().setUserAgentString("Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:54.0) Gecko/20100101
 // Firefox/54.0");
-        mWebView.loadUrl("https://www.baidu.com");
+        //mWebView.loadUrl("https://www.baidu.com");
+        mWebView.loadUrl("file:///android_asset/web/training1.html");
 
     }
 
@@ -114,10 +115,11 @@ public class MainActivity extends AppCompatActivity {
             }
             pdfFile.createNewFile();
             descriptor = ParcelFileDescriptor.open(pdfFile, ParcelFileDescriptor.MODE_READ_WRITE);
-            // 设置打印参数
+            // 设置打印参数  1.4135 : a4
+            PrintAttributes.MediaSize mySize = new PrintAttributes.MediaSize("my_size", "android", 2000, 2850);
             PrintAttributes.MediaSize isoA4 = PrintAttributes.MediaSize.ISO_A4;
             PrintAttributes attributes = new PrintAttributes.Builder()
-                    .setMediaSize(isoA4)
+                    .setMediaSize(mySize)/*isoA4)*/
                     .setResolution(new PrintAttributes.Resolution("id", Context.PRINT_SERVICE, 500, 500))
                     .setColorMode(PrintAttributes.COLOR_MODE_COLOR)
                     .setMinMargins(PrintAttributes.Margins.NO_MARGINS)

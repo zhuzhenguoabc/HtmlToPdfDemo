@@ -1,0 +1,1349 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		html {
+			font-size: 16px;
+		}
+
+		body {
+			color: #000000;
+		}
+
+		.list {
+			width: 100%;
+		}
+
+		.li {
+			width: 100%;
+		}
+
+		.li-border-bottom {
+			border-bottom: solid 1px #000000;
+		}
+
+		.li-border {
+			border: solid 1px #000000;
+		}
+
+		.li-padding {
+			padding: 10px 10px 0;
+		}
+
+		.li-cells {
+			display: table;
+		}
+
+		.li-cell {
+			display: table-cell;
+		}
+
+		.li-cell-left {
+			width: 70%;
+			border-right: solid 1px #000000;
+		}
+
+		.li-cell-right {
+			width: 30%;
+		}
+
+		.li-title {
+			color: #000000;
+			font-weight: blod;
+			margin: 10px 0px;
+		}
+
+		.li-content {
+			color: #000000;
+			font-weight: blod;
+			margin: 5px auto;
+			word-break: break-word;
+		}
+
+		.li-arrows {
+			position: relative;
+			width: 100%;
+			display: table;
+			padding-bottom: 0;
+			border-bottom: solid 1px #000000;
+		}
+
+		.li-arrows::after {
+			content: "";
+			position: absolute;
+			bottom: -5px;
+			right: 0;
+			width: 0;
+			height: 0;
+			border-left: solid 10px #000000;
+			border-top: solid 4px transparent;
+			border-bottom: solid 4px transparent;
+		}
+
+		.li-arrow {
+			display: table-cell;
+			text-align: center;
+			color: #000000;
+			font-size: 14px;
+			font-weight: 500;
+		}
+
+		.li-label {
+			position: relative;
+			color: #000000;
+			font-weight: 500;
+			margin: 8px 10px 0 16px;
+		}
+
+		.li-label::after {
+			content: "";
+			position: absolute;
+			left: -14px;
+			top: 7px;
+			border-radius: 100%;
+			background: #000000;
+			width: 8px;
+			height: 8px;
+		}
+
+		.li-items {
+			width: 100%;
+			display: table;
+			margin: 5px auto 0;
+		}
+
+		.li-item {
+			display: table-cell;
+			min-width: 33.33%;
+			margin: 0;
+			vertical-align: middle;
+		}
+
+		.li-item {
+			display: table-cell;
+			min-width: 33%;
+			min-height: 20px;
+			margin: 0;
+			vertical-align: middle;
+		}
+
+		.li-item img {
+			float: left;
+			vertical-align: middle;
+		}
+
+		.li-item span {
+			float: left;
+			line-height: 16px;
+			vertical-align: middle;
+		}
+
+		.li-item-text {
+			color: #000000;
+			font-size: 12px;
+		}
+
+		.li-item-other {
+			min-width: 33%;
+			min-height: 20px;
+			margin: 0;
+			vertical-align: middle;
+			display: flex;
+		}
+
+		.li-item-other img {
+			width: 15px;
+			height: 15px;
+			float: left;
+			vertical-align: middle;
+		}
+
+		.li-item-other-text {
+			display: inline-block;
+			color: #000000;
+			font-size: 12px;
+			line-height: 16px;
+			float: left;
+			vertical-align: middle;
+		}
+
+		.li-item-other-line {
+			display: inline-block;
+			flex: 1;
+			height: 16px;
+			border-bottom: solid 1px #000000;
+		}
+
+		.cell-row {
+			margin: 5px auto 0;
+			zoom: 1;
+		}
+
+		.cell-row:after {
+			clear: both;
+			display: block;
+			width: 0;
+			height: 0;
+			visibility: hidden;
+		}
+
+		.cell-col {
+			margin: 5px auto 0;
+		}
+
+		.cell-li {
+			margin: 0 10px 0 0;
+			word-break: break-all;
+		}
+
+		.cell-text {
+			margin: 0;
+			padding: 0;
+			word-break: break-word;
+		}
+
+		.cell-image {
+			max-width: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="list" style="page-break-inside: avoid">
+		<div class="li li-padding li-border" style="page-break-inside: avoid">
+			<div class="li-label">知识点：</div>
+			<div class="li-content" style="margin-bottom:10px">句子——关联句</div>
+		</div>
+		<div class="li li-cells li-border" style="page-break-inside: avoid">
+			<div class="li-cell li-cell-left li-padding">
+				<div class="li-title">原题</div>
+				<!--大题-->
+				<!--内容-->
+				<div class="li-content">
+					<div class="cell-col">
+						<div class="cell-li">
+							
+							<img src="https://xtimg.sharingschool.com/ai/results/chinese_renjiao(bubian)_grade41_hgxzydbj(sz)_question/567206d2-5096-4da9-a979-6354cb2c3ad1.jpg"
+								class="cell-image" />
+						</div>
+					</div>
+				</div>
+
+				<!-- <div th:if="${containAnswerAnalysis && question.wrongQuestion.questionClassType != 1}"> -->
+				<!--解析-->
+				<!-- <div th:if="${!#lists.isEmpty(question.wrongQuestion.analysisJson)}" class="td-title">解析：</div>
+						<div class="li-content" th:if="${!#lists.isEmpty(question.wrongQuestion.analysisJson)}">
+							<div class="cell-col">
+								<div class="cell-li" th:each="analysisRow : ${question.wrongQuestion.analysisJson}">
+								<span th:each="analysisContent : ${analysisRow.list}">
+									<span th:if="${analysisContent.type == 1}" th:text="${analysisContent.value}"
+										  class="cell-text"/>
+									<img th:if="${analysisContent.type == 2}" th:src="${analysisContent.value}"
+										 class="cell-image"/>
+								</span>
+								</div>
+							</div>
+						</div> -->
+
+				<!--答案-->
+				<!-- <div class="li-title" th:if="${(question.wrongQuestion.questionClassType == 0 && #lists.isEmpty(question.wrongQuestion.childList)) || !#lists.isEmpty(question.wrongQuestion.answerJson)}">答案：</div>
+						<div class="li-content" th:if="${(question.wrongQuestion.questionClassType == 0 && #lists.isEmpty(question.wrongQuestion.childList)) || !#lists.isEmpty(question.wrongQuestion.answerJson)}">
+							<div class="cell-row" th:if="${#lists.isEmpty(question.wrongQuestion.answerJson)}">
+								<div class="cell-li">
+									<span class="cell-text">略。</span>
+								</div>
+							</div>
+							<div class="cell-row">
+								<span class="cell-li" th:each="answerRow : ${question.wrongQuestion.answerJson}">
+									<span th:each="answerContent : ${answerRow.list}">
+										<span th:if="${answerContent.type == 1}" th:text="${answerContent.value}"
+											  class="cell-text"/>
+										<img th:if="${answerContent.type == 2}" th:src="${answerContent.value}"
+											 class="cell-image"/>
+									</span>
+								</span>
+							</div>
+						</div> -->
+				<!-- </div> -->
+
+				<!--小题-->
+				<div>
+					<!--内容-->
+					<div class="li-content">
+						<div class="cell-col">
+							<div class="cell-li">
+								
+								<img src="https://xtimg.sharingschool.com/ai/results/chinese_renjiao(bubian)_grade41_hgxzydbj(sz)_question/d4b5b8d3-3462-4e78-b2ac-d1b7746356b7.jpg"
+									class="cell-image" />
+							</div>
+						</div>
+					</div>
+					<!--解析-->
+					<!-- <div th:if="${containAnswerAnalysis}">
+							
+							<div th:unless="${#lists.isEmpty(childQuestion.analysisJson)}" class="td-title">解析：</div>
+							<div class="li-content" th:unless="${#lists.isEmpty(childQuestion.analysisJson)}">
+								<div class="cell-col">
+									<div class="cell-li" th:each="analysisRow : ${childQuestion.analysisJson}">
+								<span th:each="analysisContent : ${analysisRow.list}">
+									<span th:if="${analysisContent.type == 1}" th:text="${analysisContent.value}"
+										  class="cell-text"/>
+									<img th:if="${analysisContent.type == 2}" th:src="${analysisContent.value}"
+										 class="cell-image"/>
+								</span>
+									</div>
+								</div>
+							</div>-->
+
+					<!--答案
+							<div class="li-title">答案：</div>
+							<div class="li-content">
+								<div class="cell-row" th:if="${#lists.isEmpty(childQuestion.answerJson)}">
+									<span class="cell-li">
+										<span class="cell-text">略。</span>
+									</span>
+								</div>
+								<div class="cell-row">
+									<span class="cell-li" th:each="answerRow : ${childQuestion.answerJson}">
+										<span th:each="answerContent : ${answerRow.list}">
+											<span th:if="${answerContent.type == 1}" th:text="${answerContent.value}"
+												  class="cell-text"/>
+											<img th:if="${answerContent.type == 2}" th:src="${answerContent.value}"
+												 class="cell-image"/>
+										</span>
+									</span>
+								</div>
+							</div>
+						</div> -->
+				</div>
+			</div>
+
+			<div class="li-cell li-cell-right li-padding">
+				<div class="li-title">错题诊断分析</div>
+				<div class="li-label">分类题：</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">易错题</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">已错题</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">难点题</span>
+					</div>
+				</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">典型题</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">听课笔记</span>
+					</div>
+				</div>
+
+				<div class="li-label">掌握度：</div>
+				<div class="li-arrows">
+					<div class="li-arrow">未掌握</div>
+					<div class="li-arrow">1</div>
+					<div class="li-arrow">2</div>
+					<div class="li-arrow">3</div>
+					<div class="li-arrow">4</div>
+					<div class="li-arrow">5</div>
+					<div class="li-arrow">已掌握</div>
+				</div>
+
+				<div class="li-label">难易度：</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">基础</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">进阶</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">培优</span>
+					</div>
+				</div>
+
+				<div class="li-label">归错因：</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">
+							<span>书写错误</span>
+							
+							
+						</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">知识点未掌握</span>
+					</div>
+				</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">
+							<span>审题和思路错误</span>
+							
+							
+						</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">
+							<span>答案不完整</span>
+							
+							
+						</span>
+					</div>
+				</div>
+				<div class="li-items">
+					<div class="li-item-other">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-other-text">其他原因</span>
+						<span class="li-item-other-line"></span>
+					</div>
+				</div>
+				<!-- <div class="li-items">
+						<div class="li-item-line"></div>
+					</div> -->
+			</div>
+		</div>
+		<div class="li li-cells li-border" style="page-break-inside: avoid">
+			<div class="li-cell li-cell-left li-padding">
+				<div class="li-title">原题</div>
+				<!--大题-->
+				<!--内容-->
+				<div class="li-content">
+					<div class="cell-col">
+						<div class="cell-li">
+							
+							<img src="https://xtimg.sharingschool.com/ai/results/chinese_renjiao(bubian)_grade41_hgxzydbj(sz)_question/e87ce138-5c87-496f-972a-b8065febe19e.jpg"
+								class="cell-image" />
+						</div>
+					</div>
+				</div>
+
+				<!-- <div th:if="${containAnswerAnalysis && question.wrongQuestion.questionClassType != 1}"> -->
+				<!--解析-->
+				<!-- <div th:if="${!#lists.isEmpty(question.wrongQuestion.analysisJson)}" class="td-title">解析：</div>
+						<div class="li-content" th:if="${!#lists.isEmpty(question.wrongQuestion.analysisJson)}">
+							<div class="cell-col">
+								<div class="cell-li" th:each="analysisRow : ${question.wrongQuestion.analysisJson}">
+								<span th:each="analysisContent : ${analysisRow.list}">
+									<span th:if="${analysisContent.type == 1}" th:text="${analysisContent.value}"
+										  class="cell-text"/>
+									<img th:if="${analysisContent.type == 2}" th:src="${analysisContent.value}"
+										 class="cell-image"/>
+								</span>
+								</div>
+							</div>
+						</div> -->
+
+				<!--答案-->
+				<!-- <div class="li-title" th:if="${(question.wrongQuestion.questionClassType == 0 && #lists.isEmpty(question.wrongQuestion.childList)) || !#lists.isEmpty(question.wrongQuestion.answerJson)}">答案：</div>
+						<div class="li-content" th:if="${(question.wrongQuestion.questionClassType == 0 && #lists.isEmpty(question.wrongQuestion.childList)) || !#lists.isEmpty(question.wrongQuestion.answerJson)}">
+							<div class="cell-row" th:if="${#lists.isEmpty(question.wrongQuestion.answerJson)}">
+								<div class="cell-li">
+									<span class="cell-text">略。</span>
+								</div>
+							</div>
+							<div class="cell-row">
+								<span class="cell-li" th:each="answerRow : ${question.wrongQuestion.answerJson}">
+									<span th:each="answerContent : ${answerRow.list}">
+										<span th:if="${answerContent.type == 1}" th:text="${answerContent.value}"
+											  class="cell-text"/>
+										<img th:if="${answerContent.type == 2}" th:src="${answerContent.value}"
+											 class="cell-image"/>
+									</span>
+								</span>
+							</div>
+						</div> -->
+				<!-- </div> -->
+
+				<!--小题-->
+				<div>
+					<!--内容-->
+					<div class="li-content">
+						<div class="cell-col">
+							<div class="cell-li">
+								
+								<img src="https://xtimg.sharingschool.com/ai/results/chinese_renjiao(bubian)_grade41_hgxzydbj(sz)_question/8f2fd039-4ca8-4309-8165-735fff099ca5.jpg"
+									class="cell-image" />
+							</div>
+						</div>
+					</div>
+					<!--解析-->
+					<!-- <div th:if="${containAnswerAnalysis}">
+							
+							<div th:unless="${#lists.isEmpty(childQuestion.analysisJson)}" class="td-title">解析：</div>
+							<div class="li-content" th:unless="${#lists.isEmpty(childQuestion.analysisJson)}">
+								<div class="cell-col">
+									<div class="cell-li" th:each="analysisRow : ${childQuestion.analysisJson}">
+								<span th:each="analysisContent : ${analysisRow.list}">
+									<span th:if="${analysisContent.type == 1}" th:text="${analysisContent.value}"
+										  class="cell-text"/>
+									<img th:if="${analysisContent.type == 2}" th:src="${analysisContent.value}"
+										 class="cell-image"/>
+								</span>
+									</div>
+								</div>
+							</div>-->
+
+					<!--答案
+							<div class="li-title">答案：</div>
+							<div class="li-content">
+								<div class="cell-row" th:if="${#lists.isEmpty(childQuestion.answerJson)}">
+									<span class="cell-li">
+										<span class="cell-text">略。</span>
+									</span>
+								</div>
+								<div class="cell-row">
+									<span class="cell-li" th:each="answerRow : ${childQuestion.answerJson}">
+										<span th:each="answerContent : ${answerRow.list}">
+											<span th:if="${answerContent.type == 1}" th:text="${answerContent.value}"
+												  class="cell-text"/>
+											<img th:if="${answerContent.type == 2}" th:src="${answerContent.value}"
+												 class="cell-image"/>
+										</span>
+									</span>
+								</div>
+							</div>
+						</div> -->
+				</div>
+			</div>
+
+			<div class="li-cell li-cell-right li-padding">
+				<div class="li-title">错题诊断分析</div>
+				<div class="li-label">分类题：</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">易错题</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">已错题</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">难点题</span>
+					</div>
+				</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">典型题</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">听课笔记</span>
+					</div>
+				</div>
+
+				<div class="li-label">掌握度：</div>
+				<div class="li-arrows">
+					<div class="li-arrow">未掌握</div>
+					<div class="li-arrow">1</div>
+					<div class="li-arrow">2</div>
+					<div class="li-arrow">3</div>
+					<div class="li-arrow">4</div>
+					<div class="li-arrow">5</div>
+					<div class="li-arrow">已掌握</div>
+				</div>
+
+				<div class="li-label">难易度：</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">基础</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">进阶</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">培优</span>
+					</div>
+				</div>
+
+				<div class="li-label">归错因：</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">
+							<span>书写错误</span>
+							
+							
+						</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">知识点未掌握</span>
+					</div>
+				</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">
+							<span>审题和思路错误</span>
+							
+							
+						</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">
+							<span>答案不完整</span>
+							
+							
+						</span>
+					</div>
+				</div>
+				<div class="li-items">
+					<div class="li-item-other">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-other-text">其他原因</span>
+						<span class="li-item-other-line"></span>
+					</div>
+				</div>
+				<!-- <div class="li-items">
+						<div class="li-item-line"></div>
+					</div> -->
+			</div>
+		</div>
+
+		
+	</div>
+	<div class="list" style="page-break-inside: avoid">
+		<div class="li li-padding li-border" style="page-break-inside: avoid">
+			<div class="li-label">知识点：</div>
+			<div class="li-content" style="margin-bottom:10px">句子——句子衔接与排序</div>
+		</div>
+		<div class="li li-cells li-border" style="page-break-inside: avoid">
+			<div class="li-cell li-cell-left li-padding">
+				<div class="li-title">原题</div>
+				<!--大题-->
+				<!--内容-->
+				<div class="li-content">
+					<div class="cell-col">
+						<div class="cell-li">
+							
+							<img src="https://xtimg.sharingschool.com/ai/results/chinese_renjiaobubian_grade42_jtydxl2020_question/8c270582-c40e-4822-ab12-a204928985a7.jpg"
+								class="cell-image" />
+						</div>
+					</div>
+				</div>
+
+				<!-- <div th:if="${containAnswerAnalysis && question.wrongQuestion.questionClassType != 1}"> -->
+				<!--解析-->
+				<!-- <div th:if="${!#lists.isEmpty(question.wrongQuestion.analysisJson)}" class="td-title">解析：</div>
+						<div class="li-content" th:if="${!#lists.isEmpty(question.wrongQuestion.analysisJson)}">
+							<div class="cell-col">
+								<div class="cell-li" th:each="analysisRow : ${question.wrongQuestion.analysisJson}">
+								<span th:each="analysisContent : ${analysisRow.list}">
+									<span th:if="${analysisContent.type == 1}" th:text="${analysisContent.value}"
+										  class="cell-text"/>
+									<img th:if="${analysisContent.type == 2}" th:src="${analysisContent.value}"
+										 class="cell-image"/>
+								</span>
+								</div>
+							</div>
+						</div> -->
+
+				<!--答案-->
+				<!-- <div class="li-title" th:if="${(question.wrongQuestion.questionClassType == 0 && #lists.isEmpty(question.wrongQuestion.childList)) || !#lists.isEmpty(question.wrongQuestion.answerJson)}">答案：</div>
+						<div class="li-content" th:if="${(question.wrongQuestion.questionClassType == 0 && #lists.isEmpty(question.wrongQuestion.childList)) || !#lists.isEmpty(question.wrongQuestion.answerJson)}">
+							<div class="cell-row" th:if="${#lists.isEmpty(question.wrongQuestion.answerJson)}">
+								<div class="cell-li">
+									<span class="cell-text">略。</span>
+								</div>
+							</div>
+							<div class="cell-row">
+								<span class="cell-li" th:each="answerRow : ${question.wrongQuestion.answerJson}">
+									<span th:each="answerContent : ${answerRow.list}">
+										<span th:if="${answerContent.type == 1}" th:text="${answerContent.value}"
+											  class="cell-text"/>
+										<img th:if="${answerContent.type == 2}" th:src="${answerContent.value}"
+											 class="cell-image"/>
+									</span>
+								</span>
+							</div>
+						</div> -->
+				<!-- </div> -->
+
+				<!--小题-->
+				<div>
+					<!--内容-->
+					<div class="li-content">
+						<div class="cell-col">
+							<div class="cell-li">
+								
+								<img src="https://xtimg.sharingschool.com/ai/results/chinese_renjiaobubian_grade42_jtydxl2020_question/51eefa2b-258f-4f29-9087-5da0e2e6d38d.jpg"
+									class="cell-image" />
+							</div>
+						</div>
+					</div>
+					<!--解析-->
+					<!-- <div th:if="${containAnswerAnalysis}">
+							
+							<div th:unless="${#lists.isEmpty(childQuestion.analysisJson)}" class="td-title">解析：</div>
+							<div class="li-content" th:unless="${#lists.isEmpty(childQuestion.analysisJson)}">
+								<div class="cell-col">
+									<div class="cell-li" th:each="analysisRow : ${childQuestion.analysisJson}">
+								<span th:each="analysisContent : ${analysisRow.list}">
+									<span th:if="${analysisContent.type == 1}" th:text="${analysisContent.value}"
+										  class="cell-text"/>
+									<img th:if="${analysisContent.type == 2}" th:src="${analysisContent.value}"
+										 class="cell-image"/>
+								</span>
+									</div>
+								</div>
+							</div>-->
+
+					<!--答案
+							<div class="li-title">答案：</div>
+							<div class="li-content">
+								<div class="cell-row" th:if="${#lists.isEmpty(childQuestion.answerJson)}">
+									<span class="cell-li">
+										<span class="cell-text">略。</span>
+									</span>
+								</div>
+								<div class="cell-row">
+									<span class="cell-li" th:each="answerRow : ${childQuestion.answerJson}">
+										<span th:each="answerContent : ${answerRow.list}">
+											<span th:if="${answerContent.type == 1}" th:text="${answerContent.value}"
+												  class="cell-text"/>
+											<img th:if="${answerContent.type == 2}" th:src="${answerContent.value}"
+												 class="cell-image"/>
+										</span>
+									</span>
+								</div>
+							</div>
+						</div> -->
+				</div>
+			</div>
+
+			<div class="li-cell li-cell-right li-padding">
+				<div class="li-title">错题诊断分析</div>
+				<div class="li-label">分类题：</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">易错题</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">已错题</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">难点题</span>
+					</div>
+				</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">典型题</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">听课笔记</span>
+					</div>
+				</div>
+
+				<div class="li-label">掌握度：</div>
+				<div class="li-arrows">
+					<div class="li-arrow">未掌握</div>
+					<div class="li-arrow">1</div>
+					<div class="li-arrow">2</div>
+					<div class="li-arrow">3</div>
+					<div class="li-arrow">4</div>
+					<div class="li-arrow">5</div>
+					<div class="li-arrow">已掌握</div>
+				</div>
+
+				<div class="li-label">难易度：</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">基础</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">进阶</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">培优</span>
+					</div>
+				</div>
+
+				<div class="li-label">归错因：</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">
+							<span>书写错误</span>
+							
+							
+						</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">知识点未掌握</span>
+					</div>
+				</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">
+							<span>审题和思路错误</span>
+							
+							
+						</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">
+							<span>答案不完整</span>
+							
+							
+						</span>
+					</div>
+				</div>
+				<div class="li-items">
+					<div class="li-item-other">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-other-text">其他原因</span>
+						<span class="li-item-other-line"></span>
+					</div>
+				</div>
+				<!-- <div class="li-items">
+						<div class="li-item-line"></div>
+					</div> -->
+			</div>
+		</div>
+
+		
+	</div>
+	<div class="list" style="page-break-inside: avoid">
+		<div class="li li-padding li-border" style="page-break-inside: avoid">
+			<div class="li-label">知识点：</div>
+			<div class="li-content" style="margin-bottom:10px">句子——仿句</div>
+		</div>
+		<div class="li li-cells li-border" style="page-break-inside: avoid">
+			<div class="li-cell li-cell-left li-padding">
+				<div class="li-title">原题</div>
+				<!--大题-->
+				<!--内容-->
+				<div class="li-content">
+					<div class="cell-col">
+						<div class="cell-li">
+							
+							<img src="https://img.sharingschool.com/ai/results/chinese_renjiao(bubian)_grade61_xkcxxfd(2021)_question/202009191307333160379564053.jpg"
+								class="cell-image" />
+						</div>
+					</div>
+				</div>
+
+				<!-- <div th:if="${containAnswerAnalysis && question.wrongQuestion.questionClassType != 1}"> -->
+				<!--解析-->
+				<!-- <div th:if="${!#lists.isEmpty(question.wrongQuestion.analysisJson)}" class="td-title">解析：</div>
+						<div class="li-content" th:if="${!#lists.isEmpty(question.wrongQuestion.analysisJson)}">
+							<div class="cell-col">
+								<div class="cell-li" th:each="analysisRow : ${question.wrongQuestion.analysisJson}">
+								<span th:each="analysisContent : ${analysisRow.list}">
+									<span th:if="${analysisContent.type == 1}" th:text="${analysisContent.value}"
+										  class="cell-text"/>
+									<img th:if="${analysisContent.type == 2}" th:src="${analysisContent.value}"
+										 class="cell-image"/>
+								</span>
+								</div>
+							</div>
+						</div> -->
+
+				<!--答案-->
+				<!-- <div class="li-title" th:if="${(question.wrongQuestion.questionClassType == 0 && #lists.isEmpty(question.wrongQuestion.childList)) || !#lists.isEmpty(question.wrongQuestion.answerJson)}">答案：</div>
+						<div class="li-content" th:if="${(question.wrongQuestion.questionClassType == 0 && #lists.isEmpty(question.wrongQuestion.childList)) || !#lists.isEmpty(question.wrongQuestion.answerJson)}">
+							<div class="cell-row" th:if="${#lists.isEmpty(question.wrongQuestion.answerJson)}">
+								<div class="cell-li">
+									<span class="cell-text">略。</span>
+								</div>
+							</div>
+							<div class="cell-row">
+								<span class="cell-li" th:each="answerRow : ${question.wrongQuestion.answerJson}">
+									<span th:each="answerContent : ${answerRow.list}">
+										<span th:if="${answerContent.type == 1}" th:text="${answerContent.value}"
+											  class="cell-text"/>
+										<img th:if="${answerContent.type == 2}" th:src="${answerContent.value}"
+											 class="cell-image"/>
+									</span>
+								</span>
+							</div>
+						</div> -->
+				<!-- </div> -->
+
+				<!--小题-->
+				<div>
+					<!--内容-->
+					<div class="li-content">
+						<div class="cell-col">
+							<div class="cell-li">
+								
+								<img src="https://img.sharingschool.com/ai/results/chinese_renjiao(bubian)_grade61_xkcxxfd(2021)_question/202009191307333160379564056.jpg"
+									class="cell-image" />
+							</div>
+						</div>
+					</div>
+					<!--解析-->
+					<!-- <div th:if="${containAnswerAnalysis}">
+							
+							<div th:unless="${#lists.isEmpty(childQuestion.analysisJson)}" class="td-title">解析：</div>
+							<div class="li-content" th:unless="${#lists.isEmpty(childQuestion.analysisJson)}">
+								<div class="cell-col">
+									<div class="cell-li" th:each="analysisRow : ${childQuestion.analysisJson}">
+								<span th:each="analysisContent : ${analysisRow.list}">
+									<span th:if="${analysisContent.type == 1}" th:text="${analysisContent.value}"
+										  class="cell-text"/>
+									<img th:if="${analysisContent.type == 2}" th:src="${analysisContent.value}"
+										 class="cell-image"/>
+								</span>
+									</div>
+								</div>
+							</div>-->
+
+					<!--答案
+							<div class="li-title">答案：</div>
+							<div class="li-content">
+								<div class="cell-row" th:if="${#lists.isEmpty(childQuestion.answerJson)}">
+									<span class="cell-li">
+										<span class="cell-text">略。</span>
+									</span>
+								</div>
+								<div class="cell-row">
+									<span class="cell-li" th:each="answerRow : ${childQuestion.answerJson}">
+										<span th:each="answerContent : ${answerRow.list}">
+											<span th:if="${answerContent.type == 1}" th:text="${answerContent.value}"
+												  class="cell-text"/>
+											<img th:if="${answerContent.type == 2}" th:src="${answerContent.value}"
+												 class="cell-image"/>
+										</span>
+									</span>
+								</div>
+							</div>
+						</div> -->
+				</div>
+			</div>
+
+			<div class="li-cell li-cell-right li-padding">
+				<div class="li-title">错题诊断分析</div>
+				<div class="li-label">分类题：</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">易错题</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">已错题</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">难点题</span>
+					</div>
+				</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">典型题</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">听课笔记</span>
+					</div>
+				</div>
+
+				<div class="li-label">掌握度：</div>
+				<div class="li-arrows">
+					<div class="li-arrow">未掌握</div>
+					<div class="li-arrow">1</div>
+					<div class="li-arrow">2</div>
+					<div class="li-arrow">3</div>
+					<div class="li-arrow">4</div>
+					<div class="li-arrow">5</div>
+					<div class="li-arrow">已掌握</div>
+				</div>
+
+				<div class="li-label">难易度：</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">基础</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">进阶</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">培优</span>
+					</div>
+				</div>
+
+				<div class="li-label">归错因：</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">
+							<span>书写错误</span>
+							
+							
+						</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">知识点未掌握</span>
+					</div>
+				</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">
+							<span>审题和思路错误</span>
+							
+							
+						</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">
+							<span>答案不完整</span>
+							
+							
+						</span>
+					</div>
+				</div>
+				<div class="li-items">
+					<div class="li-item-other">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-other-text">其他原因</span>
+						<span class="li-item-other-line"></span>
+					</div>
+				</div>
+				<!-- <div class="li-items">
+						<div class="li-item-line"></div>
+					</div> -->
+			</div>
+		</div>
+
+		
+	</div>
+	<div class="list" style="page-break-inside: avoid">
+		<div class="li li-padding li-border" style="page-break-inside: avoid">
+			<div class="li-label">知识点：</div>
+			<div class="li-content" style="margin-bottom:10px">句子——扩句</div>
+		</div>
+		<div class="li li-cells li-border" style="page-break-inside: avoid">
+			<div class="li-cell li-cell-left li-padding">
+				<div class="li-title">原题</div>
+				<!--大题-->
+				<!--内容-->
+				<div class="li-content">
+					<div class="cell-col">
+						<div class="cell-li">
+							
+							<img src="https://img.sharingschool.com/ai/results/chinese_renjiao(bubian)_grade61_xkcxxfd(2021)_question/202009191307333160392146963.jpg"
+								class="cell-image" />
+						</div>
+					</div>
+				</div>
+
+				<!-- <div th:if="${containAnswerAnalysis && question.wrongQuestion.questionClassType != 1}"> -->
+				<!--解析-->
+				<!-- <div th:if="${!#lists.isEmpty(question.wrongQuestion.analysisJson)}" class="td-title">解析：</div>
+						<div class="li-content" th:if="${!#lists.isEmpty(question.wrongQuestion.analysisJson)}">
+							<div class="cell-col">
+								<div class="cell-li" th:each="analysisRow : ${question.wrongQuestion.analysisJson}">
+								<span th:each="analysisContent : ${analysisRow.list}">
+									<span th:if="${analysisContent.type == 1}" th:text="${analysisContent.value}"
+										  class="cell-text"/>
+									<img th:if="${analysisContent.type == 2}" th:src="${analysisContent.value}"
+										 class="cell-image"/>
+								</span>
+								</div>
+							</div>
+						</div> -->
+
+				<!--答案-->
+				<!-- <div class="li-title" th:if="${(question.wrongQuestion.questionClassType == 0 && #lists.isEmpty(question.wrongQuestion.childList)) || !#lists.isEmpty(question.wrongQuestion.answerJson)}">答案：</div>
+						<div class="li-content" th:if="${(question.wrongQuestion.questionClassType == 0 && #lists.isEmpty(question.wrongQuestion.childList)) || !#lists.isEmpty(question.wrongQuestion.answerJson)}">
+							<div class="cell-row" th:if="${#lists.isEmpty(question.wrongQuestion.answerJson)}">
+								<div class="cell-li">
+									<span class="cell-text">略。</span>
+								</div>
+							</div>
+							<div class="cell-row">
+								<span class="cell-li" th:each="answerRow : ${question.wrongQuestion.answerJson}">
+									<span th:each="answerContent : ${answerRow.list}">
+										<span th:if="${answerContent.type == 1}" th:text="${answerContent.value}"
+											  class="cell-text"/>
+										<img th:if="${answerContent.type == 2}" th:src="${answerContent.value}"
+											 class="cell-image"/>
+									</span>
+								</span>
+							</div>
+						</div> -->
+				<!-- </div> -->
+
+				<!--小题-->
+				<div>
+					<!--内容-->
+					<div class="li-content">
+						<div class="cell-col">
+							<div class="cell-li">
+								
+								<img src="https://img.sharingschool.com/ai/results/chinese_renjiao(bubian)_grade61_xkcxxfd(2021)_question/202009191307333160392146965.jpg"
+									class="cell-image" />
+							</div>
+						</div>
+					</div>
+					<!--解析-->
+					<!-- <div th:if="${containAnswerAnalysis}">
+							
+							<div th:unless="${#lists.isEmpty(childQuestion.analysisJson)}" class="td-title">解析：</div>
+							<div class="li-content" th:unless="${#lists.isEmpty(childQuestion.analysisJson)}">
+								<div class="cell-col">
+									<div class="cell-li" th:each="analysisRow : ${childQuestion.analysisJson}">
+								<span th:each="analysisContent : ${analysisRow.list}">
+									<span th:if="${analysisContent.type == 1}" th:text="${analysisContent.value}"
+										  class="cell-text"/>
+									<img th:if="${analysisContent.type == 2}" th:src="${analysisContent.value}"
+										 class="cell-image"/>
+								</span>
+									</div>
+								</div>
+							</div>-->
+
+					<!--答案
+							<div class="li-title">答案：</div>
+							<div class="li-content">
+								<div class="cell-row" th:if="${#lists.isEmpty(childQuestion.answerJson)}">
+									<span class="cell-li">
+										<span class="cell-text">略。</span>
+									</span>
+								</div>
+								<div class="cell-row">
+									<span class="cell-li" th:each="answerRow : ${childQuestion.answerJson}">
+										<span th:each="answerContent : ${answerRow.list}">
+											<span th:if="${answerContent.type == 1}" th:text="${answerContent.value}"
+												  class="cell-text"/>
+											<img th:if="${answerContent.type == 2}" th:src="${answerContent.value}"
+												 class="cell-image"/>
+										</span>
+									</span>
+								</div>
+							</div>
+						</div> -->
+				</div>
+			</div>
+
+			<div class="li-cell li-cell-right li-padding">
+				<div class="li-title">错题诊断分析</div>
+				<div class="li-label">分类题：</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">易错题</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">已错题</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">难点题</span>
+					</div>
+				</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">典型题</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">听课笔记</span>
+					</div>
+				</div>
+
+				<div class="li-label">掌握度：</div>
+				<div class="li-arrows">
+					<div class="li-arrow">未掌握</div>
+					<div class="li-arrow">1</div>
+					<div class="li-arrow">2</div>
+					<div class="li-arrow">3</div>
+					<div class="li-arrow">4</div>
+					<div class="li-arrow">5</div>
+					<div class="li-arrow">已掌握</div>
+				</div>
+
+				<div class="li-label">难易度：</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">基础</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">进阶</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">培优</span>
+					</div>
+				</div>
+
+				<div class="li-label">归错因：</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">
+							<span>书写错误</span>
+							
+							
+						</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">知识点未掌握</span>
+					</div>
+				</div>
+				<div class="li-items">
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">
+							<span>审题和思路错误</span>
+							
+							
+						</span>
+					</div>
+					<div class="li-item">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-text">
+							<span>答案不完整</span>
+							
+							
+						</span>
+					</div>
+				</div>
+				<div class="li-items">
+					<div class="li-item-other">
+						<img
+							src="https://img.sharingschool.com/select.png">
+						<span class="li-item-other-text">其他原因</span>
+						<span class="li-item-other-line"></span>
+					</div>
+				</div>
+				<!-- <div class="li-items">
+						<div class="li-item-line"></div>
+					</div> -->
+			</div>
+		</div>
+
+		
+	</div>
+	
+	
+	
+	
+	
+	</div>
+</body>
+
+</html>

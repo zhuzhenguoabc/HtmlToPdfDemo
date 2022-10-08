@@ -1,0 +1,646 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		html {
+			font-size: 16px;
+		}
+
+		body {
+			color: #000000;
+		}
+
+		.list {
+			width: 100%;
+		}
+
+		.li {
+			width: 100%;
+		}
+
+		.li-border-bottom {
+			border-bottom: solid 1px #000000;
+		}
+
+		.li-border {
+			border: solid 1px #000000;
+		}
+
+		.li-padding {
+			padding: 10px 10px 0;
+		}
+
+		.li-cells {
+			display: table;
+		}
+
+		.li-cell {
+			display: table-cell;
+		}
+
+		.li-cell-left {
+			width: 70%;
+			border-right: solid 1px #000000;
+		}
+
+		.li-cell-right {
+			width: 30%;
+            vertical-align: top
+		}
+
+		.li-title {
+			color: #000000;
+			font-weight: 600;
+		}
+
+		.li-content {
+			color: #000000;
+			font-weight: 500;
+			margin: 5px auto 16px;
+			word-break: break-word;
+		}
+
+		.li-arrows {
+			position: relative;
+			width: 100%;
+			display: table;
+			padding-bottom: 0;
+			border-bottom: solid 1px #000000;
+		}
+
+		.li-arrows::after {
+			content: "";
+			position: absolute;
+			bottom: -5px;
+			right: 0;
+			width: 0;
+			height: 0;
+			border-left: solid 10px #000000;
+			border-top: solid 4px transparent;
+			border-bottom: solid 4px transparent;
+		}
+
+		.li-arrow {
+			display: table-cell;
+			text-align: center;
+			color: #000000;
+			font-size: 14px;
+			font-weight: 500;
+		}
+
+		.li-label {
+			position: relative;
+			color: #000000;
+			font-weight: 500;
+			margin: 8px 10px 0 16px;
+		}
+
+		.li-label::after {
+			content: "";
+			position: absolute;
+			left: -14px;
+			top: 7px;
+			border-radius: 100%;
+			background: #000000;
+			width: 8px;
+			height: 8px;
+		}
+
+		.li-items {
+			width: 100%;
+			display: table;
+			margin: 5px auto 0;
+		}
+
+		.li-item {
+			display: table-cell;
+			min-width: 33.33%;
+			margin: 0;
+			vertical-align: middle;
+		}
+
+		.li-item {
+			display: table-cell;
+			min-width: 33%;
+			min-height: 20px;
+			margin: 0;
+			vertical-align: middle;
+		}
+
+		.li-item img {
+			float: left;
+			vertical-align: middle;
+		}
+
+		.li-item span {
+			float: left;
+			line-height: 16px;
+			vertical-align: middle;
+		}
+
+		.li-item-text {
+			color: #000000;
+			font-size: 12px;
+		}
+
+		.li-item-other {
+			min-width: 33%;
+			min-height: 20px;
+			margin: 0;
+			vertical-align: middle;
+			display: flex;
+		}
+
+		.li-item-other img {
+			width: 15px;
+			height: 15px;
+			float: left;
+			vertical-align: middle;
+		}
+
+		.li-item-other-text {
+			display: inline-block;
+			color: #000000;
+			font-size: 12px;
+			line-height: 16px;
+			float: left;
+			vertical-align: middle;
+		}
+
+		.li-item-other-line {
+			display: inline-block;
+			flex: 1;
+			height: 16px;
+			border-bottom: solid 1px #000000;
+		}
+
+		.cell-row {
+			margin: 5px auto 0;
+			zoom: 1;
+		}
+
+		.cell-row:after {
+			clear: both;
+			display: block;
+			width: 0;
+			height: 0;
+			visibility: hidden;
+		}
+
+		.cell-col {
+			margin: 5px auto 0;
+			page-break-inside: avoid
+		}
+
+		.cell-li {
+			margin: 0 10px 0 0;
+			word-break: break-all;
+		}
+
+		.cell-text {
+			margin: 0;
+			padding: 0;
+			word-break: break-word;
+		}
+
+		.cell-image {
+			max-width: 100%;
+		}
+	</style>
+</head>
+
+<body class="li-border">
+	
+	
+	
+	<div>
+		<div style="text-align: center;font-size: 32px;font-weight:600;padding: 23px;">参考答案</div>
+		<div class="list">
+			<div class="li-border-bottom" style="page-break-inside: avoid">
+				<div style="background: #F4F4F4;padding:5px;margin: 10px;">
+					<span style="font-weight:700" class="li-title">知识点：</span><span class="li-content">《松鼠》——词语理解及运用</span>
+				</div>
+				</div>
+				<!-- <div class="li li-padding"
+						 th:classappend="${recommendOption == 0 ? 'li-border-bottom' : 'li-border'}"
+						 th:styleappend="${recommendOption == 0 ? '' : 'page-break-inside: avoid'}">
+						<div class="li-label">知识点：</div>
+						<div class="li-content" th:text="${knowledge.knowledgeName}"></div>
+					</div> -->
+				<div class="li li-cells li-border-bottom">
+					<div class="li-cell  li-padding" style="width:100%">
+						<!-- <div class="li-title">原题</div> -->
+						<!--大题-->
+						<!--内容-->
+						<!-- <div class="li-content">
+								<div class="cell-col">
+									<div class="cell-li" th:each="questionContent : ${question.wrongQuestion.questionJson}">
+										<span th:if="${questionContent.type == 1}" th:text="${questionContent.value}"
+											  class="cell-text"/>
+										<img th:if="${questionContent.type == 2}" th:src="${questionContent.value}"
+											 class="cell-image"/>
+									</div>
+								</div>
+							</div> -->
+		
+						<div>
+							<!--解析-->
+							<div style="page-break-inside: avoid">
+							<div class="td-title" style="font-weight:700">解析：</div>
+							<div class="li-content">
+								<div class="cell-col">
+									<div class="cell-li">
+										<span>
+											<span class="cell-text" >略</span>
+											
+										</span>
+									</div>
+								</div>
+							</div>
+							</div>
+							<!--答案-->
+							<div style="page-break-inside: avoid">
+							<div class="li-title" style="font-weight:700">
+								答案：</div>
+							<div class="li-content">
+								
+								<div class="cell-row">
+									<span class="cell-li">
+										<span>
+											<span class="cell-text" >示例：做</span>
+											
+										</span>
+									</span><span class="cell-li">
+										<span>
+											<span class="cell-text" >摘</span>
+											
+										</span>
+									</span><span class="cell-li">
+										<span>
+											<span class="cell-text" >喝</span>
+											
+										</span>
+									</span><span class="cell-li">
+										<span>
+											<span class="cell-text" >触动</span>
+											
+										</span>
+									</span><span class="cell-li">
+										<span>
+											<span class="cell-text" >梳理</span>
+											
+										</span>
+									</span>
+								</div>
+							</div>
+						</div>
+						</div>
+		
+						<!--小题-->
+						<div>
+							<!--内容-->
+							<!-- <div class="li-content">
+									<div class="cell-col">
+										<div class="cell-li" th:each="questionContent : ${childQuestion.questionJson}">
+										<span th:if="${questionContent.type == 1}" th:text="${questionContent.value}"
+											  class="cell-text"/>
+											<img th:if="${questionContent.type == 2}" th:src="${questionContent.value}"
+												 class="cell-image"/>
+										</div>
+									</div>
+								</div> -->
+		
+							<div>
+								<!--解析-->
+								<div style="page-break-inside: avoid">
+								
+								
+								</div>
+								<!--答案-->
+								<div style="page-break-inside: avoid">
+								
+								<div class="li-content">
+									
+									<div class="cell-row">
+										
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div>
+							<!--内容-->
+							<!-- <div class="li-content">
+									<div class="cell-col">
+										<div class="cell-li" th:each="questionContent : ${childQuestion.questionJson}">
+										<span th:if="${questionContent.type == 1}" th:text="${questionContent.value}"
+											  class="cell-text"/>
+											<img th:if="${questionContent.type == 2}" th:src="${questionContent.value}"
+												 class="cell-image"/>
+										</div>
+									</div>
+								</div> -->
+		
+							<div>
+								<!--解析-->
+								<div style="page-break-inside: avoid">
+								<div class="td-title" style="font-weight:700">解析：</div>
+								<div class="li-content">
+									<div class="cell-col">
+										<div class="cell-li">
+											<span>
+												<span class="cell-text" >这几句话写的是松鼠搭窝的全过程：搬木片→错杂放置木片→编扎苔藓→挤紧、踏平苔藓。用“搬、编扎、挤、踏”等一系列动词，从选址、建造等方面表现了松鼠做事有条理、聪明、勤快，表达了作者对松鼠的喜爱之情。其中表示先后顺序的字词是：先、再、然后。造句略。</span>
+												
+											</span>
+										</div>
+										<div class="cell-li">
+											<span>
+												<span class="cell-text" >故答案为：</span>
+												
+											</span>
+										</div>
+										<div class="cell-li">
+											<span>
+												
+												<img src="https://img.sharingschool.com/2021/09/12/20210912520744789828481024.png"
+													class="cell-image" />
+											</span>
+										</div>
+									</div>
+								</div>
+								</div>
+								<!--答案-->
+								<div style="page-break-inside: avoid">
+								<div class="li-title" style="font-weight:700">
+								答案：</div>
+								<div class="li-content">
+									
+									<div class="cell-row">
+										<span class="cell-li">
+											<span>
+												
+												<img src="https://img.sharingschool.com/ai/results/chinese_renjiaobubian_grade51_dzd2022_answer/43.2-2-4-1.png"
+													class="cell-image" />
+											</span>
+										</span>
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+		</div>
+		<div class="list">
+			<div class="li-border-bottom" style="page-break-inside: avoid">
+				<div style="background: #F4F4F4;padding:5px;margin: 10px;">
+					<span style="font-weight:700" class="li-title">知识点：</span><span class="li-content">《松鼠》——重点字词</span>
+				</div>
+				</div>
+				<!-- <div class="li li-padding"
+						 th:classappend="${recommendOption == 0 ? 'li-border-bottom' : 'li-border'}"
+						 th:styleappend="${recommendOption == 0 ? '' : 'page-break-inside: avoid'}">
+						<div class="li-label">知识点：</div>
+						<div class="li-content" th:text="${knowledge.knowledgeName}"></div>
+					</div> -->
+				<div class="li li-cells li-border-bottom">
+					<div class="li-cell  li-padding" style="width:100%">
+						<!-- <div class="li-title">原题</div> -->
+						<!--大题-->
+						<!--内容-->
+						<!-- <div class="li-content">
+								<div class="cell-col">
+									<div class="cell-li" th:each="questionContent : ${question.wrongQuestion.questionJson}">
+										<span th:if="${questionContent.type == 1}" th:text="${questionContent.value}"
+											  class="cell-text"/>
+										<img th:if="${questionContent.type == 2}" th:src="${questionContent.value}"
+											 class="cell-image"/>
+									</div>
+								</div>
+							</div> -->
+		
+						<div>
+							<!--解析-->
+							<div style="page-break-inside: avoid">
+							<div class="td-title" style="font-weight:700">解析：</div>
+							<div class="li-content">
+								<div class="cell-col">
+									<div class="cell-li">
+										<span>
+											<span class="cell-text" >略</span>
+											
+										</span>
+									</div>
+								</div>
+							</div>
+							</div>
+							<!--答案-->
+							<div style="page-break-inside: avoid">
+							<div class="li-title" style="font-weight:700">
+								答案：</div>
+							<div class="li-content">
+								
+								<div class="cell-row">
+									<span class="cell-li">
+										<span>
+											<span class="cell-text" >松鼠</span>
+											
+										</span>
+									</span><span class="cell-li">
+										<span>
+											<span class="cell-text" >清秀</span>
+											
+										</span>
+									</span><span class="cell-li">
+										<span>
+											<span class="cell-text" >玲珑</span>
+											
+										</span>
+									</span><span class="cell-li">
+										<span>
+											<span class="cell-text" >追逐</span>
+											
+										</span>
+									</span><span class="cell-li">
+										<span>
+											<span class="cell-text" >窝</span>
+											
+										</span>
+									</span><span class="cell-li">
+										<span>
+											<span class="cell-text" >歇凉</span>
+											
+										</span>
+									</span><span class="cell-li">
+										<span>
+											<span class="cell-text" >乖巧</span>
+											
+										</span>
+									</span>
+								</div>
+							</div>
+						</div>
+						</div>
+		
+						<!--小题-->
+						
+					</div>
+				</div>
+			
+		</div>
+		<div class="list">
+			<div class="li-border-bottom" style="page-break-inside: avoid">
+				<div style="background: #F4F4F4;padding:5px;margin: 10px;">
+					<span style="font-weight:700" class="li-title">知识点：</span><span class="li-content">《松鼠》——文章基本内容</span>
+				</div>
+				</div>
+				<!-- <div class="li li-padding"
+						 th:classappend="${recommendOption == 0 ? 'li-border-bottom' : 'li-border'}"
+						 th:styleappend="${recommendOption == 0 ? '' : 'page-break-inside: avoid'}">
+						<div class="li-label">知识点：</div>
+						<div class="li-content" th:text="${knowledge.knowledgeName}"></div>
+					</div> -->
+				<div class="li li-cells li-border-bottom">
+					<div class="li-cell  li-padding" style="width:100%">
+						<!-- <div class="li-title">原题</div> -->
+						<!--大题-->
+						<!--内容-->
+						<!-- <div class="li-content">
+								<div class="cell-col">
+									<div class="cell-li" th:each="questionContent : ${question.wrongQuestion.questionJson}">
+										<span th:if="${questionContent.type == 1}" th:text="${questionContent.value}"
+											  class="cell-text"/>
+										<img th:if="${questionContent.type == 2}" th:src="${questionContent.value}"
+											 class="cell-image"/>
+									</div>
+								</div>
+							</div> -->
+		
+						
+		
+						<!--小题-->
+						<div>
+							<!--内容-->
+							<!-- <div class="li-content">
+									<div class="cell-col">
+										<div class="cell-li" th:each="questionContent : ${childQuestion.questionJson}">
+										<span th:if="${questionContent.type == 1}" th:text="${questionContent.value}"
+											  class="cell-text"/>
+											<img th:if="${questionContent.type == 2}" th:src="${questionContent.value}"
+												 class="cell-image"/>
+										</div>
+									</div>
+								</div> -->
+		
+							<div>
+								<!--解析-->
+								<div style="page-break-inside: avoid">
+								<div class="td-title" style="font-weight:700">解析：</div>
+								<div class="li-content">
+									<div class="cell-col">
+										<div class="cell-li">
+											<span>
+												<span class="cell-text" >根据原文“松鼠不躲藏在地底下，经常在高处活动，像飞鸟一样住在树顶上，满树林里跑，从这棵树跳到那棵树”“它们不接近人的住宅，也不待在小树丛里，只喜欢住在高大的老树”可知，松鼠的活动范围主要是在树顶上，故选B。</span>
+												
+											</span>
+										</div>
+										<div class="cell-li">
+											<span>
+												<span class="cell-text" >故答案为：B。</span>
+												
+											</span>
+										</div>
+									</div>
+								</div>
+								</div>
+								<!--答案-->
+								<div style="page-break-inside: avoid">
+								<div class="li-title" style="font-weight:700">
+								答案：</div>
+								<div class="li-content">
+									
+									<div class="cell-row">
+										<span class="cell-li">
+											<span>
+												<span class="cell-text" >B</span>
+												
+											</span>
+										</span>
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div>
+							<!--内容-->
+							<!-- <div class="li-content">
+									<div class="cell-col">
+										<div class="cell-li" th:each="questionContent : ${childQuestion.questionJson}">
+										<span th:if="${questionContent.type == 1}" th:text="${questionContent.value}"
+											  class="cell-text"/>
+											<img th:if="${questionContent.type == 2}" th:src="${questionContent.value}"
+												 class="cell-image"/>
+										</div>
+									</div>
+								</div> -->
+		
+							<div>
+								<!--解析-->
+								<div style="page-break-inside: avoid">
+								<div class="td-title" style="font-weight:700">解析：</div>
+								<div class="li-content">
+									<div class="cell-col">
+										<div class="cell-li">
+											<span>
+												<span class="cell-text" >根据原文“它们好像很怕强烈的日光，白天躲在窝里歇凉，晚上出来奔跑、玩耍、吃东西”可知，松鼠的活动时间一般是晚上，故选A。</span>
+												
+											</span>
+										</div>
+										<div class="cell-li">
+											<span>
+												<span class="cell-text" >故答案为：A。</span>
+												
+											</span>
+										</div>
+									</div>
+								</div>
+								</div>
+								<!--答案-->
+								<div style="page-break-inside: avoid">
+								<div class="li-title" style="font-weight:700">
+								答案：</div>
+								<div class="li-content">
+									
+									<div class="cell-row">
+										<span class="cell-li">
+											<span>
+												<span class="cell-text" >A</span>
+												
+											</span>
+										</span>
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+		</div>
+	</div>
+</body>
+
+</html>
